@@ -1,0 +1,61 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "REST API Tournament planner",
+    "description": "REST API Tournament planner",
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "https://tournamentplanner.com/api/{version}",
+      "description": "The production API server",
+      "variables": {
+        "version": {
+          "default": "v1"
+        }
+      }
+    }
+  ],
+  "tags": [
+    {
+      "name": "auth",
+      "description": "Authentication"
+    }
+  ],
+  "paths": {
+    "/auth/login": {
+      "post": {
+        "description": "Login",
+        "tags": ["auth"],
+        "operationId": "login",
+        "responses": {
+          "200": {
+            "description": "successful login",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "LoginResult": {
+        "type": "object",
+        "required": [
+          "username"
+        ],
+        "properties": {
+          "username": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
