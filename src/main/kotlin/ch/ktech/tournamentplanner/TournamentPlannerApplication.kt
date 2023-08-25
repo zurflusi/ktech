@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class TournamentPlannerApplication
 
 fun main(args: Array<String>) {
-	runApplication<TournamentPlannerApplication>(*args)
+    runApplication<TournamentPlannerApplication>(*args)
 }
